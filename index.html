@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Day Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Beginner GitHub Project</p>
+          <h1 id="page-title">Smart Day Board</h1>
+          <p class="subtitle">
+            A tiny dashboard that combines a mini calendar, quick calculator,
+            habit tracker, and daily note in one simple web app.
+          </p>
+        </div>
+        <div class="today-card">
+          <span id="weekday">Today</span>
+          <strong id="todayDate">--</strong>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel calendar-panel">
+          <div class="panel-title-row">
+            <h2>Calendar</h2>
+            <div class="month-controls">
+              <button id="prevMonth" type="button" aria-label="Previous month">‹</button>
+              <span id="monthLabel"></span>
+              <button id="nextMonth" type="button" aria-label="Next month">›</button>
+            </div>
+          </div>
+          <div class="weekdays" aria-hidden="true">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
+            <span>Thu</span><span>Fri</span><span>Sat</span>
+          </div>
+          <div id="calendarGrid" class="calendar-grid" aria-label="Month calendar"></div>
+        </article>
+
+        <article class="panel">
+          <h2>Quick Calculator</h2>
+          <label class="field">
+            First number
+            <input id="numberA" type="number" value="12" />
+          </label>
+          <label class="field">
+            Operation
+            <select id="operation">
+              <option value="+">Add</option>
+              <option value="-">Subtract</option>
+              <option value="*">Multiply</option>
+              <option value="/">Divide</option>
+            </select>
+          </label>
+          <label class="field">
+            Second number
+            <input id="numberB" type="number" value="3" />
+          </label>
+          <div class="result-box">
+            <span>Result</span>
+            <strong id="calcResult">15</strong>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title-row">
+            <h2>Habit Tracker</h2>
+            <span id="habitScore" class="badge">0/4</span>
+          </div>
+          <div class="habits">
+            <label><input type="checkbox" /> Study coding</label>
+            <label><input type="checkbox" /> Drink water</label>
+            <label><input type="checkbox" /> Move body</label>
+            <label><input type="checkbox" /> Plan tomorrow</label>
+          </div>
+        </article>
+
+        <article class="panel note-panel">
+          <h2>Daily Note</h2>
+          <textarea id="dailyNote" placeholder="Write one idea for today..."></textarea>
+          <p class="hint">Your note is saved in this browser automatically.</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
