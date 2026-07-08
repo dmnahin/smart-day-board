@@ -1,12 +1,21 @@
 # Smart Day Board
 
-Smart Day Board is a beginner-friendly web project for GitHub. It combines a mini calendar, a quick calculator, a habit tracker, and a daily note.
+Smart Day Board is a beginner-friendly web project for GitHub. It combines a mini calendar, a quick calculator, a habit tracker, a daily note, and a Bangladesh government holiday section.
 
 ## Files
 
 - `index.html` contains the page structure.
 - `style.css` contains the design.
 - `script.js` contains the app logic.
+
+## Latest Update
+
+- Changed the font and color theme.
+- Added Bangladesh government holidays for 2026.
+- Added holiday labels inside the calendar.
+- Added a next holiday badge.
+
+Holiday dates are stored inside `script.js` in the `bangladeshHolidays2026` list. Moon-based holidays can change after official moon sighting, so edit that list if the government announces a change.
 
 ## How to Open
 

@@ -1,14 +1,15 @@
 :root {
-  --ink: #17211b;
-  --muted: #657269;
-  --line: #d8e2db;
-  --paper: #fbfcf7;
+  --ink: #13201a;
+  --muted: #64736b;
+  --line: #d6e4dc;
+  --paper: #f8fbf7;
   --panel: #ffffff;
-  --mint: #9ee6c5;
-  --coral: #ffad94;
-  --sun: #f7d76f;
-  --sky: #9fcdf5;
-  --shadow: 0 18px 50px rgba(23, 33, 27, 0.12);
+  --green: #006a4e;
+  --deep-green: #004b3a;
+  --red: #f42a41;
+  --gold: #ffd166;
+  --aqua: #81d6c3;
+  --shadow: 0 18px 50px rgba(0, 75, 58, 0.14);
 }
 
 * {
@@ -19,10 +20,11 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(158, 230, 197, 0.7), transparent 28rem),
-    linear-gradient(135deg, #fbfcf7 0%, #eef7f1 48%, #fff5ea 100%);
+    radial-gradient(circle at top left, rgba(0, 106, 78, 0.16), transparent 29rem),
+    radial-gradient(circle at bottom right, rgba(244, 42, 65, 0.12), transparent 25rem),
+    linear-gradient(135deg, #f8fbf7 0%, #e9f6ef 48%, #fff7ef 100%);
 }
 
 button,
@@ -48,7 +50,7 @@ textarea {
 
 .eyebrow {
   margin: 0 0 8px;
-  color: #2b7a5a;
+  color: var(--green);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -85,7 +87,7 @@ h2 {
 .panel {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow);
 }
 
@@ -166,6 +168,8 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+  text-align: left;
+  cursor: pointer;
 }
 
 .calendar-day.is-muted {
@@ -174,9 +178,30 @@ h2 {
 }
 
 .calendar-day.is-today {
-  border-color: #2b7a5a;
-  background: linear-gradient(135deg, rgba(158, 230, 197, 0.95), rgba(247, 215, 111, 0.72));
+  border-color: var(--green);
+  background: linear-gradient(135deg, rgba(0, 106, 78, 0.18), rgba(255, 209, 102, 0.58));
   font-weight: 800;
+}
+
+.calendar-day.is-holiday {
+  border-color: rgba(244, 42, 65, 0.45);
+  background: #fff3f2;
+}
+
+.holiday-dot {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 7px;
+  padding: 3px 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  color: white;
+  background: var(--red);
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .field {
@@ -212,7 +237,7 @@ textarea {
   margin-top: 12px;
   padding: 14px;
   border-radius: 8px;
-  background: #17211b;
+  background: var(--deep-green);
   color: white;
 }
 
@@ -223,7 +248,7 @@ textarea {
 .badge {
   padding: 6px 10px;
   border-radius: 999px;
-  background: var(--sun);
+  background: var(--gold);
   font-weight: 800;
 }
 
@@ -246,11 +271,11 @@ textarea {
 .habits input {
   width: 18px;
   height: 18px;
-  accent-color: #2b7a5a;
+  accent-color: var(--green);
 }
 
 .note-panel {
-  background: linear-gradient(135deg, rgba(255, 173, 148, 0.3), rgba(159, 205, 245, 0.28)), var(--panel);
+  background: linear-gradient(135deg, rgba(244, 42, 65, 0.09), rgba(129, 214, 195, 0.3)), var(--panel);
 }
 
 textarea {
@@ -262,6 +287,64 @@ textarea {
 
 .hint {
   margin: 10px 0 0;
+}
+
+.hint code {
+  padding: 2px 5px;
+  border-radius: 5px;
+  background: rgba(0, 106, 78, 0.1);
+}
+
+.holiday-panel {
+  grid-column: 1 / -1;
+}
+
+.holiday-heading {
+  align-items: start;
+}
+
+.holiday-heading h2 {
+  margin-bottom: 0;
+}
+
+.holiday-badge {
+  background: var(--green);
+  color: white;
+}
+
+.holiday-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.holiday-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  align-items: center;
+  min-height: 58px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.holiday-date {
+  color: var(--green);
+  font-weight: 900;
+}
+
+.holiday-name {
+  font-weight: 800;
+}
+
+.holiday-type {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 @media (max-width: 780px) {
@@ -281,5 +364,13 @@ textarea {
   .calendar-day {
     min-height: 52px;
     font-size: 0.9rem;
+  }
+
+  .holiday-list {
+    grid-template-columns: 1fr;
+  }
+
+  .holiday-item {
+    grid-template-columns: 92px 1fr;
   }
 }

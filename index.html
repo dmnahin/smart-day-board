@@ -10,11 +10,11 @@
     <main class="app">
       <section class="hero" aria-labelledby="page-title">
         <div>
-          <p class="eyebrow">Beginner GitHub Project</p>
+          <p class="eyebrow">Bangladesh Daily Planner</p>
           <h1 id="page-title">Smart Day Board</h1>
           <p class="subtitle">
-            A tiny dashboard that combines a mini calendar, quick calculator,
-            habit tracker, and daily note in one simple web app.
+            A fresh daily dashboard with calendar, calculator, habit tracker,
+            note, and Bangladesh government holiday view.
           </p>
         </div>
         <div class="today-card">
@@ -28,9 +28,9 @@
           <div class="panel-title-row">
             <h2>Calendar</h2>
             <div class="month-controls">
-              <button id="prevMonth" type="button" aria-label="Previous month">‹</button>
+              <button id="prevMonth" type="button" aria-label="Previous month">&lt;</button>
               <span id="monthLabel"></span>
-              <button id="nextMonth" type="button" aria-label="Next month">›</button>
+              <button id="nextMonth" type="button" aria-label="Next month">&gt;</button>
             </div>
           </div>
           <div class="weekdays" aria-hidden="true">
@@ -82,6 +82,20 @@
           <h2>Daily Note</h2>
           <textarea id="dailyNote" placeholder="Write one idea for today..."></textarea>
           <p class="hint">Your note is saved in this browser automatically.</p>
+        </article>
+
+        <article class="panel holiday-panel">
+          <div class="panel-title-row holiday-heading">
+            <div>
+              <p class="eyebrow">Bangladesh</p>
+              <h2>Government Holidays 2026</h2>
+            </div>
+            <span id="nextHoliday" class="badge holiday-badge">Next holiday</span>
+          </div>
+          <div id="holidayList" class="holiday-list"></div>
+          <p class="hint">
+            Dates are editable in <code>script.js</code>. Moon-based holidays may change after official moon sighting.
+          </p>
         </article>
       </section>
     </main>
